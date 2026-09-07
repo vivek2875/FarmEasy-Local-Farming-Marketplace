@@ -1,0 +1,36 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# PHP/Composer runtime artifacts
+/vendor/
+*.log
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local database dumps and archive copies
+*.zip
+*.bak
+*.sql.gz
+
+# Future analytics runtime data: preserve only directory placeholders.
+/analytics/data/raw/*
+!/analytics/data/raw/.gitkeep
+/analytics/data/processed/*
+!/analytics/data/processed/.gitkeep
+/analytics/data/quality_reports/*
+!/analytics/data/quality_reports/.gitkeep
+/analytics/notebooks/.ipynb_checkpoints/
+
+# Python tooling for the analytics module
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
