@@ -1,6 +1,6 @@
 # FarmEasy — Local Farming Marketplace
 
-FarmEasy is a PHP and MySQL marketplace that lets farmers list agricultural
+FarmEasy marketplace that lets farmers list agricultural
 products and buyers browse products, save favourites, review listings, and
 purchase directly from local producers.
 
@@ -10,17 +10,15 @@ purchase directly from local producers.
 
 ## Technology
 
-- PHP with `mysqli`
 - MySQL / MariaDB
 - Bootstrap 3, jQuery, HTML, and CSS
 
 ## Local setup (Windows)
 
-1. Install a local PHP + MySQL stack such as XAMPP.
-2. Create a database named `farmeasy`.
-3. Import [`farmeasy.sql`](farmeasy.sql) with phpMyAdmin or MySQL.
-4. Copy `.env.example` to `.env` and set your local database credentials.
-5. Configure your web server to serve this directory, then open `index.php`.
+1. Create a database named `farmeasy`.
+2. Import [`farmeasy.sql`](farmeasy.sql) with phpMyAdmin or MySQL.
+3. Copy `.env.example` to `.env` and set your local database credentials.
+4. Configure your web server to serve this directory, then open `index.php`.
 
 The connection file reads `FARMEASY_DB_HOST`, `FARMEASY_DB_PORT`,
 `FARMEASY_DB_NAME`, `FARMEASY_DB_USER`, and `FARMEASY_DB_PASSWORD`. It retains
