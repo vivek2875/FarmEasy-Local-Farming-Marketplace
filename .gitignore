@@ -32,8 +32,5 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
-*.egg-info/
-build/
-dist/
 .venv/
 venv/
