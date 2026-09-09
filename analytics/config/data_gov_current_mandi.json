@@ -1,0 +1,159 @@
+{
+  "config_version": 1,
+  "source": {
+    "id": "data_gov_current_mandi",
+    "display_name": "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+    "publisher": "Directorate of Marketing and Inspection (DMI), Department of Agriculture and Farmers Welfare, Ministry of Agriculture and Farmers Welfare, Government of India",
+    "upstream_system": "AGMARKNET",
+    "resource_id": "9ef84268-d588-465a-a308-a864a43d0070",
+    "catalog_url": "https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi",
+    "resource_url": "https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi",
+    "license": {
+      "name": "Government Open Data License - India",
+      "url": "https://data.gov.in/godl",
+      "attribution_required": true,
+      "non_endorsement_required": true
+    },
+    "api": {
+      "base_url": "https://api.data.gov.in/resource",
+      "resource_url": "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070",
+      "authentication": {
+        "query_parameter": "api-key",
+        "environment_variable": "FARMEASY_ANALYTICS_DATA_GOV_API_KEY",
+        "required": true,
+        "store_in_source_control": false
+      },
+      "response_format": "json",
+      "format_parameter": {
+        "name": "format",
+        "value": "json"
+      },
+      "pagination": {
+        "strategy": "offset",
+        "offset_parameter": "offset",
+        "limit_parameter": "limit",
+        "initial_offset": 0,
+        "default_limit": 1000,
+        "response_records_path": "records",
+        "response_page_count_path": "count",
+        "response_total_path": "total",
+        "continue_while": "when total is present, offset + returned record count is less than total; otherwise records is non-empty and not short",
+        "ordering": "not_guaranteed",
+        "deduplicate_across_pages": true
+      },
+      "filters": {
+        "style": "filters[field_id]=exact_value",
+        "supported_field_ids": [
+          "state",
+          "district",
+          "market",
+          "commodity",
+          "variety",
+          "grade"
+        ],
+        "use_only_after_schema_probe": true
+      }
+    },
+    "local_csv_fallback": {
+      "allowed": true,
+      "official_download_required": true,
+      "allowed_origin_urls": [
+        "https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi",
+        "https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi"
+      ],
+      "positional_mapping_allowed": false,
+      "unknown_headers_are_validation_errors": true
+    },
+    "fields": [
+      {
+        "canonical_name": "state",
+        "api_json_field": "state",
+        "csv_header_aliases": ["State", "state"],
+        "required": true,
+        "type": "string"
+      },
+      {
+        "canonical_name": "district",
+        "api_json_field": "district",
+        "csv_header_aliases": ["District", "district"],
+        "required": true,
+        "type": "string"
+      },
+      {
+        "canonical_name": "market",
+        "api_json_field": "market",
+        "csv_header_aliases": ["Market", "market"],
+        "required": true,
+        "type": "string"
+      },
+      {
+        "canonical_name": "commodity",
+        "api_json_field": "commodity",
+        "csv_header_aliases": ["Commodity", "commodity"],
+        "required": true,
+        "type": "string"
+      },
+      {
+        "canonical_name": "variety",
+        "api_json_field": "variety",
+        "csv_header_aliases": ["Variety", "variety"],
+        "required": false,
+        "type": "string"
+      },
+      {
+        "canonical_name": "grade",
+        "api_json_field": "grade",
+        "csv_header_aliases": ["Grade", "grade"],
+        "required": false,
+        "type": "string"
+      },
+      {
+        "canonical_name": "market_date",
+        "api_json_field": "arrival_date",
+        "csv_header_aliases": ["Arrival_Date", "Arrival Date", "arrival_date"],
+        "required": true,
+        "type": "date",
+        "accepted_source_formats": ["%d/%m/%Y", "%Y-%m-%d"]
+      },
+      {
+        "canonical_name": "min_price",
+        "api_json_field": "min_price",
+        "csv_header_aliases": ["Min_x0020_Price", "Min Price", "min_price"],
+        "required": true,
+        "type": "decimal"
+      },
+      {
+        "canonical_name": "max_price",
+        "api_json_field": "max_price",
+        "csv_header_aliases": ["Max_x0020_Price", "Max Price", "max_price"],
+        "required": true,
+        "type": "decimal"
+      },
+      {
+        "canonical_name": "modal_price",
+        "api_json_field": "modal_price",
+        "csv_header_aliases": ["Modal_x0020_Price", "Modal Price", "modal_price"],
+        "required": true,
+        "type": "decimal"
+      }
+    ],
+    "price_unit": {
+      "dataset_level_value": "INR/quintal",
+      "source_row_field": null,
+      "verify_against_official_artifact_on_every_new_source_variant": true
+    },
+    "arrivals": {
+      "quantity_field_present": false,
+      "unit_field_present": false,
+      "arrival_date_is_a_quantity": false,
+      "enable_supply_analytics": false
+    },
+    "acquisition_policy": {
+      "use_data_gov_api": true,
+      "allow_local_official_csv": true,
+      "scrape_agmarknet_html": false,
+      "solve_or_bypass_captcha": false,
+      "reuse_browser_cookies_or_sessions": false
+    }
+  }
+}

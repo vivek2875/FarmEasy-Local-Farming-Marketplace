@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "eda-fixture-run",
+  "source_name": "synthetic_test_fixture",
+  "summary": {
+    "raw_rows_received": 14,
+    "valid_rows_loaded": 12,
+    "invalid_rows_rejected": 2,
+    "duplicates_removed": 1,
+    "conflicting_observation_count": 0,
+    "suspicious_price_count": 2,
+    "missing_value_counts": {},
+    "stale_market_count": 0,
+    "missing_reporting_date_count": 0,
+    "data_freshness_date": "2026-09-03",
+    "pipeline_executed_at": "2026-09-03T00:00:00Z"
+  },
+  "issues_by_code": {
+    "duplicate_observation": 1,
+    "modal_price_outside_range": 1,
+    "suspicious_price_change": 2
+  }
+}
