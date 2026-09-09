@@ -10,13 +10,16 @@ prices, inspect time-series movement and price risk, understand data freshness,
 and make a more informed selling decision. It does not present a higher quoted
 price as guaranteed profit.
 
+The legacy FarmEasy marketplace lets farmers list agricultural products and
+buyers browse products, save favourites, review listings, and purchase directly
+from local producers.
+
 > This repository contains the application source extracted from the original
 > project archive. The archive itself is intentionally not committed so GitHub
 > can track and review the source files normally.
 
 ## Existing FarmEasy marketplace
 
-- PHP with `mysqli`
 - MySQL / MariaDB
 - Bootstrap 3, jQuery, HTML, and CSS
 
